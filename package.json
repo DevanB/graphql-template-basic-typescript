@@ -1,0 +1,27 @@
+{
+  "name": "graphql-template-basic-typescript",
+  "scripts": {
+    "start": "nodemon -x ts-node -e ts,graphql src/index.ts",
+    "debug": "nodemon -x 'ts-node --inspect' -e ts,graphql src/index.ts",
+    "playground": "graphql playground",
+    "build": "rimraf dist && tsc",
+    "deploy": "now --public && now alias && now rm --yes --safe graphql-template-basic-typescript",
+    "now-start": "node dist"
+  },
+  "dependencies": {
+    "graphcool-binding": "^0.2.1",
+    "graphql-import": "^0.1.5",
+    "graphql-yoga": "^0.3.0"
+  },
+  "devDependencies": {
+    "graphql-cli": "^2.0.5",
+    "nodemon": "^1.12.2",
+    "now": "^8.5.4",
+    "rimraf": "^2.6.2",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.6.2"
+  },
+  "now": {
+    "alias": "graphql-template-basic-typescript"
+  }
+}
